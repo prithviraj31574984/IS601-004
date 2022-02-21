@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> M4-Simple-Calc</td></tr>
 <tr><td> <em>Student: </em> Prithvi Raj Goravi Dattathreya(pg79)</td></tr>
-<tr><td> <em>Generated: </em> 2/21/2022 9:45:31 AM</td></tr>
+<tr><td> <em>Generated: </em> 2/21/2022 11:27:37 AM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-004-S22/m4-simple-calc/grade/pg79" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <p>Make sure you&#39;re working in an up to date branch</p>
 <ul>
@@ -57,64 +57,64 @@
 </td></tr></table>
 <table><tr><td> <em>Deliverable 1: </em> Code Snippets (Make sure each screenshot has a comment showing your ucid and the date it was written) </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of valid Addition Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154974743-f757d69c-164a-4f8d-92f1-10719f34615d.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046945980"/></td></tr>
 <tr><td> <em>Caption:</em> <p>addition function<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Screenshot of valid Subtraction Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154974966-29ffb48a-c5bb-4a26-bcde-4adfeea931df.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046950324"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Subtraction Function<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Screenshot of valid Multiplication Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975039-c22c1890-5010-47b9-87ae-e99a4537cde8.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046947696"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Multiplication Function<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 4: </em> Screenshot of valid division Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975161-76bcfe65-9954-4ad0-accd-f7b1baba251a.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046950543"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Multiplication Function<br></p>
 </td></tr>
 </table></td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 2: </em> Test Case Validations </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of passing number-add-number Test Case (should test multiple values via fixture)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975895-91b9437a-b3d0-4c4a-b55b-98aeb9628468.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154993697-5761528d-eb78-4877-b571-62538e0f8cc7.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>addition test case<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Screenshot of passing ans-add-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975895-91b9437a-b3d0-4c4a-b55b-98aeb9628468.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154993697-5761528d-eb78-4877-b571-62538e0f8cc7.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>answer + number test case<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Screenshot of passing number-sub-number Test Case (should test multiple values via fixture)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976387-f5277ac2-dd1b-4f5a-a6e0-baa6b8a18ac7.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154993909-8b84998e-3dc2-4404-9bc5-ddc2cddde0b7.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>subtraction test case<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 4: </em> Screenshot of passing ans-sub-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976387-f5277ac2-dd1b-4f5a-a6e0-baa6b8a18ac7.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154993909-8b84998e-3dc2-4404-9bc5-ddc2cddde0b7.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>answer -- number test case<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 5: </em> Screenshot of passing number-mult-number Test Case (should test multiple values via fixture)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976167-a046d983-9760-41e5-ad63-17b1471147d2.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994050-2b1fdaf2-5834-426d-b456-f25da8cf5284.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>multiplication test case<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 6: </em> Screenshot of passing ans-multi-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976167-a046d983-9760-41e5-ad63-17b1471147d2.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994050-2b1fdaf2-5834-426d-b456-f25da8cf5284.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>answer * number test case<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 7: </em> Screenshot of passing number-div-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976784-1a8a902a-c86a-4cb1-b6b5-71bb34df23f4.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994165-2559956e-cc65-4888-bbb6-523d564ea6f3.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>division test case<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 8: </em> Screenshot of passing ans-div-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976784-1a8a902a-c86a-4cb1-b6b5-71bb34df23f4.png"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994165-2559956e-cc65-4888-bbb6-523d564ea6f3.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>answer / number test case<br></p>
 </td></tr>
 </table></td></tr>
