@@ -1,6 +1,6 @@
 <table><tr><td> <em>Assignment: </em> M4-Simple-Calc</td></tr>
 <tr><td> <em>Student: </em> Prithvi Raj Goravi Dattathreya(pg79)</td></tr>
-<tr><td> <em>Generated: </em> 2/21/2022 11:27:37 AM</td></tr>
+<tr><td> <em>Generated: </em> 2/21/2022 11:30:47 AM</td></tr>
 <tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-004-S22/m4-simple-calc/grade/pg79" target="_blank">Grading</a></td></tr></table>
 <table><tr><td> <em>Instructions: </em> <p>Make sure you&#39;re working in an up to date branch</p>
 <ul>
@@ -57,22 +57,22 @@
 </td></tr></table>
 <table><tr><td> <em>Deliverable 1: </em> Code Snippets (Make sure each screenshot has a comment showing your ucid and the date it was written) </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of valid Addition Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046945980"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994580-93c2cc1e-1fe4-447b-ade3-28822154d5ef.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>addition function<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 2: </em> Screenshot of valid Subtraction Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046950324"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994652-47c687c9-f6ed-4ea1-9084-156d6f2c17a9.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Subtraction Function<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 3: </em> Screenshot of valid Multiplication Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046947696"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994700-354d9f05-9275-42b1-9f2a-2278d33aa6af.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Multiplication Function<br></p>
 </td></tr>
 </table></td></tr>
 <tr><td> <em>Sub-Task 4: </em> Screenshot of valid division Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://github.com/prithviraj31574984/IS601-004/pull/6#issuecomment-1046950543"/></td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154994752-369d179b-1d0b-42af-866c-c0f4fed215b4.png"/></td></tr>
 <tr><td> <em>Caption:</em> <p>Multiplication Function<br></p>
 </td></tr>
 </table></td></tr>
