@@ -2,7 +2,7 @@ name: cloudrun-deploy
 on:
   push:
     branches:
-      - prod # rename this to your prod branch if the naming differs
+      - Flask-sample # rename this to your prod branch if the naming differs
 jobs:
 
     deploy:
