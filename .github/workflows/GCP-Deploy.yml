@@ -2,8 +2,8 @@ name: cloudrun-deploy
 on:
   push:
     branches:
-      - prod # rename this to your prod branch if the naming differs
-      - Flask-Sample
+      - Flask-Sample # rename this to your prod branch if the naming differs
+      - flask-sample-pytests
 jobs:
 
     deploy:
@@ -17,10 +17,12 @@ jobs:
         steps:
         - name: Checkout repository
           uses: actions/checkout@v2
+        - name: Run test with pytest
+          run: pip install -r requirements.txt && pytest
         - id: 'auth'
           uses: 'google-github-actions/auth@v0'
           with:
-            credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+            credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
         - name: Configure Docker
           run: gcloud auth configure-docker --quiet
