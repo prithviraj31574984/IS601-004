@@ -5,6 +5,7 @@ on:
       - Flask-Sample # rename this to your prod branch if the naming differs
       - flask-sample-pytests
       - flask-calc
+      - flask-calc-ab
 jobs:
 
     deploy:
