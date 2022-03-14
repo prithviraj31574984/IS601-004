@@ -50,8 +50,10 @@ def test_post_sub(client):
     soup = BeautifulSoup(html, 'html.parser')
     # find the <input> tag with id "result"
     result_ele = soup.find(id="result")
+    v = result_ele.get("value")
+    print("result is " + str(v))
     # get the value attribute of the input tag
-    assert result_ele.get("value") == "7"
+    assert v == "7"
 
 def test_post_mult(client):
     response = client.post("/mycalc/", data={"eq": "7*7"})
@@ -60,8 +62,10 @@ def test_post_mult(client):
     soup = BeautifulSoup(html, 'html.parser')
     # find the <input> tag with id "result"
     result_ele = soup.find(id="result")
+    v = result_ele.get("value")
+    print("result is " + str(v))
     # get the value attribute of the input tag
-    assert result_ele.get("value") == "49"
+    assert v == "49"
 
 def test_post_div(client):
     response = client.post("/mycalc/", data={"eq": "4/2"})
@@ -70,8 +74,10 @@ def test_post_div(client):
     soup = BeautifulSoup(html, 'html.parser')
     # find the <input> tag with id "result"
     result_ele = soup.find(id="result")
+    v = result_ele.get("value")
+    print("result is " + str(v))
     # get the value attribute of the input tag
-    assert result_ele.get("value") == "2.0"
+    assert v == "2.0"
 
 
 # https://www.twilio.com/blog/web-scraping-and-parsing-html-in-python-with-beautiful-soup
