@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - Flask-Sample # rename this to your prod branch if the naming differs
-      - flask-sample-pytests
-      - flask-calc
+      - Flask-LoginReg
+      - flask-login-reg
 jobs:
 
     deploy:
@@ -18,7 +18,7 @@ jobs:
         steps:
         - name: Checkout repository
           uses: actions/checkout@v2
-        - name: Run test with pytest
+        - name: Run tests with pytest
           run: pip install -r requirements.txt && pytest
         - id: 'auth'
           uses: 'google-github-actions/auth@v0'
@@ -39,4 +39,6 @@ jobs:
 
         # requires Google Cloud Run API enabled
         - name: Deploy Docker image
-          run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region us-central1 --platform managed
+          run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region us-central1 --platform managed --set-env-vars "DB_URL=${{secrets.DB_URL}}"
+        # we can pass our github secrets as environment variables during deploy
+        #(note: this isn't the most secure way of doing this, but it's sufficient for our app)
