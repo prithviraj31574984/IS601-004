@@ -106,14 +106,11 @@ class AdvMyCalc(MyCalc):
                 zs = round((num - mean) / std_deviation, 9)
                 z_score.append(zs)
             return z_score
-
+  # UCID: pg79    Date: 02/20/2022
     def squareroot(self, num):
         return math.sqrt(num)
-
     def square(self, num):
         return operator.pow(num, 2)
-
-
 if __name__ == '__main__':
     is_running = True
     iSTR = input("Are you ready? Type yes to start or q to quit")

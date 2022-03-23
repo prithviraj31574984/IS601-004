@@ -3,8 +3,8 @@ from collections import defaultdict
 
 import pytest
 
-from M4.MyCalc import AdvMyCalc
-from M4.MyCalc import MyCalc
+from MyCalc import AdvMyCalc
+from MyCalc import MyCalc
 
 
 def read_file_data(calc_function):
