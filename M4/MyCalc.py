@@ -1,168 +1,167 @@
+import csv
+import math
+import operator
+
+# https://stackoverflow.com/a/16503661 using a dict to store values grouped by column names
+import statistics
+from collections import defaultdict
+
+
 class MyCalc:
-    ans = 0
+    ans = 0  # todo, class vs static vs instance
+    num = 0  # added a dummy for sqrt function
+    ops = {'+': operator.add,
+           '-': operator.sub,
+           '*': operator.mul,
+           'x': operator.mul,
+           '/': operator.truediv}
 
-    def _is_float(self, val):
+    @staticmethod
+    def _is_float(val):
         try:
-            val = float(val)
+            float(val)
             return True
         except:
             return False
 
-    def _is_int(self, val):
+    @staticmethod
+    def _is_int(val):
         try:
-            val = int(val)
+            int(val)
             return True
         except:
             return False
 
-    def _as_number(self, val):
-        if self._is_int(val):
+    @staticmethod
+    def _as_number(val):
+        if MyCalc._is_int(val):
             return int(val)
-        elif self._is_float(val):
+        elif MyCalc._is_float(val):
             return float(val)
         else:
             raise Exception("Not a number")
 
-    def add(self, num1, num2):
-        if num1 == "ans":
-            return self.add(self.ans, num2)
-        else:
+    def calc(self, num1, op, num2):
+        # map characters to operator function references
+        # https://stackoverflow.com/a/18591880
+        # print("num1: " + str(num1))
+        # print("num2: " + str(num2))
+        if op == "^/":
             num1 = self._as_number(num1)
-            num2 = self._as_number(num2)
-            self.ans = num1 + num2
-        return self.ans
-
-    def sub(self, num1, num2):
-        if num1 == "ans":
-            return self.sub(self.ans, num2)
+            self.ans = math.sqrt(num1)
+            return self.ans
         else:
-            num1 = self._as_number(num1)
-            num2 = self._as_number(num2)
-            self.ans = num1 - num2
-        return self.ans
-
-    def mult(self, num1, num2):
-        if num1 == "ans":
-            return self.mult(self.ans, num2)
-        else:
-            num1 = self._as_number(num1)
-            num2 = self._as_number(num2)
-            self.ans = num1 * num2
-        return self.ans
-
-    def div(self, num1, num2):
-        if num1 == "ans":
-            return self.div(self.ans, num2)
-        else:
-            num1 = self._as_number(num1)
-            num2 = self._as_number(num2)
-            if num2 == 0:
-                print("Can't divide by zero, sorry")
+            if num1 == "ans":
+                return self.calc(self.ans, op, num2)
             else:
-                self.ans = num1 / num2
-        return self.ans
+                num1 = self._as_number(num1)
+                num2 = self._as_number(num2)
+                self.ans = MyCalc.ops[op](num1, num2)
+                return self.ans
+# UCID: pg79    Date: 02/20/2022
+
+class AdvMyCalc(MyCalc):
+    def __init__(self):
+        super().ops["**"] = operator.pow
+        super().ops["//"] = operator.floordiv
+        super().ops["%"] = operator.mod
 
 
-    def mean(L):
-        total = 0
-        for x in L:
-            total += x
-        mean = total / len(L)
-        return mean
+    @staticmethod
+    def read_stats_file(input_file):
+        # https://stackoverflow.com/a/16503661 split the values of the csv based on columns.
+        columns = defaultdict(list)
+        with open(input_file, 'r') as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            line_count = 0
+            rows = []
+            for row in csv_reader:
+                for (k, v) in row.items():
+                    columns[k].append(v)
+            print(columns)
+            return columns
 
-    def median(L):
-        L.sort()
-        if len(L) % 2 != 0:
-            median = L[int(len(L) / 2)]
+ # UCID: pg79    Date: 02/20/2022
+    # Stats calculation method that uses the statistics function and calculates the values for 5 adv functions - Mean, Median, Mode, Standard Deviation and Z-Score
+    @staticmethod
+    def stats_calc(columns, stats_choice):
+        numbers = list(map(float, columns['ï»¿Input|Numbers']))
+        if stats_choice == '1':
+            mean = statistics.mean(numbers)
+            return mean
+        elif stats_choice == '2':
+            median = statistics.median(numbers)
+            return median
+        elif stats_choice == '3':
+            mode = statistics.mode(numbers)
+            return mode
+        elif stats_choice == '4':
+            std_deviation = statistics.pstdev(numbers)
+            return std_deviation
         else:
-            median = L[(int(len(L) / 2)) - 1] + L[int(len(L) / 2)]
-            median = median / 2
-        return median
+            mean = statistics.mean(numbers)
+            std_deviation = statistics.pstdev(numbers)
+            z_score = []
+            for num in numbers:
+                zs = round((num - mean) / std_deviation, 9)
+                z_score.append(zs)
+            return z_score
 
-    def mode(L):
-        counter = 0
-        num = L[0]
+    def squareroot(self, num):
+        return math.sqrt(num)
 
-        for i in L:
-            curr_frequency = L.count(i)
-            if (curr_frequency > counter):
-                counter = curr_frequency
-                num = i
-            if len(set(L)) == len(L):
-                return 'there is no mode'
-
-        return num
-
-    def variance(data):
-        n = len(data)
-        mean = sum(data) / n
-        deviations = [(x - mean) ** 2 for x in data]
-        variance = sum(deviations) / n
-        return variance
-
-    def std_dev(ls):
-        n = len(ls)
-        mean = sum(ls) / n
-        var = sum((x - mean) ** 2 for x in ls) / n
-        std_dev = var ** 0.5
-        return std_dev
-
-    number_list = []
-
-    while (True):
-        ask = input('enter a number and say "stop" to end: ')
-        if ask == 'stop':
-            break
-        number_list.append(int(ask))
-
-    mean = str(mean(number_list))
-    median = str(median(number_list))
-    mode = str(mode(number_list))
-    variance = str(variance(number_list))
-    std_dev = str(std_dev(number_list))
-
-    print(
-        'mean: ' + mean + '\n' + 'median: ' + median + '\n' + 'mode: ' + mode + '\n' + 'variance: ' + variance + '\n' + 'std_dev: ' + std_dev + '\n')
+    def square(self, num):
+        return operator.pow(num, 2)
 
 
 if __name__ == '__main__':
     is_running = True
-    iSTR = input("Are you ready?")
-    calc = MyCalc()
-    print(calc)
+    iSTR = input("Are you ready? Type yes to start or q to quit")
+    # calc = MyCalc()
+    calc = AdvMyCalc()
     if iSTR == "yes":
         while is_running:
-            iSTR = input("What is your eq:")
             if iSTR == "quit" or iSTR == "q":
                 is_running = False
             else:
-                print("Your eq was " + str(iSTR))
-                if "+" in iSTR:
-                    nums = iSTR.split("+")
-                    r = calc.add(nums[0].strip(), nums[1].strip())
-                    print("R is " + str(r))
-                # must be done before - check to hanlde negative values
-                elif "/" in iSTR:
-                    nums = iSTR.split("/")
-                    r = calc.div(nums[0].strip(), nums[1].strip())
-                    print("R is " + str(r))
-
-                elif "*" in iSTR or "x" in iSTR:
-                    nums = iSTR.split("*") if "*" in iSTR else iSTR.split("x")
-                    r = calc.mult(nums[0].strip(), nums[1].strip())
-                    print("R is " + str(r))
-                # must be done last so negative numbers work
-                elif "-" in iSTR:
-                    nums = iSTR.split("-")
-                    r = calc.sub(nums[0].strip(), nums[1].strip())
-                    print("R is " + str(r))
-
-
-
-
-
-
-    else:
-
-        print("Good bye")
+                option = input("Enter your option: 1 for equation, 2 for advanced operations. Enter q anytime to quit")
+                if option == "quit" or option == "q":
+                    print('Thanks for trying out the calculater! Good Bye')
+                    is_running = False
+                elif option == '1':
+                    iSTR = input("What is your eq:")
+                    print("Your eq was " + str(iSTR))
+                    checks = ["+", "**", "//", "/", "*", "x", "-", "%", "^^",
+                              '***']  # added a new symbol for sq root - ^^
+                    handled = False                         # UCID: pg79    Date: 02/20/2022
+                    for check in checks:
+                        if not handled and check in iSTR:
+                            nums = iSTR.split(check)
+                            print(nums[0])
+                            if check == "***":
+                                r = calc.square(int(nums[0]))
+                            elif check == "^^^":
+                                r = calc.squareroot((int(nums[0])))
+                            else:
+                                r = calc.calc(nums[0].strip(), check, nums[1].strip())
+                            print("Result is " + str(r))
+                            handled = True
+                else:
+                    file = "adv_data_file.csv"  # used the file directly instead of input from console for running in pycharm directly.
+                    # file = "../stats_numbers.csv"
+                    iSTR = input(
+                        "Select number for operation: 1 - Mean , 2 - Median, 3- Mode, 4 - Population Standard Deviation, 5 - ZScore")
+                    if input == '1' or '2' or '3' or '4' or '5':
+                        file_columns = calc.read_stats_file(file)
+                        result = calc.stats_calc(file_columns, iSTR)
+                    else:
+                        print('You have selected an invalid option')
+                        handled = False
+                    print(f"You have selected {iSTR} and your result is {result}")
+                handled = True
+            if not handled:
+                print("The action you tried is not supported, please try again")
+    else:  # exit loop
+        print("That is not a valid response. Thanks for trying out the calculater! Good Bye")
         is_running = False
+# UCID: pg79    Date: 02/20/2022
