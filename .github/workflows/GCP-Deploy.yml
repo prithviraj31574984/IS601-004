@@ -6,6 +6,7 @@ on:
       - flask-sample-pytests
       - flask-calc
       - flask-calc-ab
+      - flask-login-reg
 jobs:
 
     deploy:
