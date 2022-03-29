@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block title %}Registration{% endblock %}
 {% block content %}
-<h1>Register</h1>
+<h1>Create an Account</h1>
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <div class="mb-3">
@@ -11,7 +11,6 @@
         <p>{{ error }}</p>
         {% endfor %}
     </div>
-
     <div class="mb-3">
         {{ form.email(placeholder="email",
         class="form-control") }}
@@ -19,7 +18,6 @@
         <p>{{ error }}</p>
         {% endfor %}
     </div>
-
     <div class="mb-3">
         {{ form.password1(placeholder="password",
         class="form-control") }}
@@ -27,7 +25,6 @@
         <p>{{ error }}</p>
         {% endfor %}
     </div>
-
     <div class="mb-3">
         {{ form.password2(placeholder="Confirm password",
         class="form-control") }}
@@ -35,12 +32,9 @@
         <p>{{ error }}</p>
         {% endfor %}
     </div>
-
     <div class="mb-3">{{ form.submit(
         class="btn btn-primary") }}
     </div>
 </form>
-
 <a class="btn btn-secondary" href="{{ url_for('auth.login') }}">Already have an account?</a>
-
 {% endblock %}
