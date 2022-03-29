@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - Flask-Sample # rename this to your prod branch if the naming differs
-      - Flask-login-reg
+      - flask-login-reg
 jobs:
 
     deploy:
