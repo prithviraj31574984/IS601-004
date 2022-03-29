@@ -245,36 +245,36 @@ def test_mode(init_adv_calc):
 
 
 # UCID: pg79    Date: 02/20/2022
-def test_std_deviation(init_adv_calc):
+def test_variance(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_std_deviation = round(init_adv_calc.stats_calc(data, '4'), 9)
-    print(calc_std_deviation)
-    if calc_std_deviation == as_number(data['Pop Std Deviation|Positive Case'][0]):
+    calc_variance = round(init_adv_calc.stats_calc(data, '4'), 9)
+    print(calc_variance)
+    if calc_variance == as_number(data['Pop variance|Positive Case'][0]):
         # Positive check
         print("\n")
         print("Positive Test")
-        assert calc_std_deviation == as_number(data['Pop Std Deviation|Positive Case'][0])
+        assert calc_variance == as_number(data['Pop variance|Positive Case'][0])
     else:
         # Negative check
         print("\n")
         print("Negative Test")
-        assert calc_std_deviation != as_number(data['Pop Std Deviation|Positive Case'][0])
+        assert calc_variance != as_number(data['Pop variance|Positive Case'][0])
 
 
 # UCID: pg79    Date: 02/20/2022
 # testing all values in one array since the data set is predefined and picking the data by columns instead of rows. The common stats_calc function
 # is used for all 5 calculations so the z score is also calculated at one go
-def test_z_score(init_adv_calc):
+def test_correlation(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_z_score = init_adv_calc.stats_calc(data, '5')
-    z_score_test_values = list(map(float, data['Positive Case|Z-Score']))
-    print(calc_z_score)
+    calc_correlation = init_adv_calc.stats_calc(data, '5')
+    correlation_test_values = list(map(float, data['Positive Case|correlation']))
+    print(calc_correlation)
     # print(z_score_test_values)
-    if calc_z_score == z_score_test_values:
-        print(calc_z_score)
+    if calc_correlation == correlation_test_values:
+        print(calc_correlation)
         print("Positive Test Case")
-        assert calc_z_score == z_score_test_values
+        assert calc_correlation == correlation_test_values
     else:
-        print(calc_z_score)
+        print(calc_correlation)
         print("Negative Test Case")
-        assert calc_z_score != z_score_test_values
+        assert calc_correlation != correlation_test_values

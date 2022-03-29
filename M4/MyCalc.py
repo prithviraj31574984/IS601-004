@@ -86,6 +86,7 @@ class AdvMyCalc(MyCalc):
     @staticmethod
     def stats_calc(columns, stats_choice):
         numbers = list(map(float, columns['ï»¿Input|Numbers']))
+        numbers2 = list(map(float, columns['ï»¿Input|Numbers2']))
         if stats_choice == '1':
             mean = statistics.mean(numbers)
             return mean
@@ -96,16 +97,12 @@ class AdvMyCalc(MyCalc):
             mode = statistics.mode(numbers)
             return mode
         elif stats_choice == '4':
-            std_deviation = statistics.pstdev(numbers)
-            return std_deviation
-        else:
             mean = statistics.mean(numbers)
-            std_deviation = statistics.pstdev(numbers)
-            z_score = []
-            for num in numbers:
-                zs = round((num - mean) / std_deviation, 9)
-                z_score.append(zs)
-            return z_score
+            pvariance = statistics.pvariance(numbers)
+            return pvariance
+        else:
+            correlation = statistics.correlation(numbers, numbers2)
+            return correlation
   # UCID: pg79    Date: 02/20/2022
     def squareroot(self, num):
         return math.sqrt(num)
@@ -147,7 +144,7 @@ if __name__ == '__main__':
                     file = "adv_data_file.csv"  # used the file directly instead of input from console for running in pycharm directly.
                     # file = "../stats_numbers.csv"
                     iSTR = input(
-                        "Select number for operation: 1 - Mean , 2 - Median, 3- Mode, 4 - Population Standard Deviation, 5 - ZScore")
+                        "Select number for operation: 1 - Mean , 2 - Median, 3- Mode, 4 - Population Variance, 5 - Correlation")
                     if input == '1' or '2' or '3' or '4' or '5':
                         file_columns = calc.read_stats_file(file)
                         result = calc.stats_calc(file_columns, iSTR)
