@@ -194,26 +194,60 @@ def test_num_square_root_num(init_adv_calc, row):
 
 
 # UCID: pg79    Date: 02/20/2022
-def test_mean(init_adv_calc):
+def test_variance_of_population_proportion(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_mean = init_adv_calc.stats_calc(data, '1')
+    calc_variance_of_population_proportion = init_adv_calc.stats_calc(data, '1')
     numbers = list(map(float, data['ï»¿Input|Numbers']))
-    if calc_mean == as_number(data['Mean|Positive Case'][0]):
+    if calc_variance_of_population_proportion == as_number(data['variance_of_population_proportion|Positive Case'][0]):
         # Positive check
         print("\n")
         print("Positive Test")
-        assert calc_mean == as_number(data['Mean|Positive Case'][0])
+        assert calc_variance_of_population_proportion == as_number(data['variance_of_population_proportion|Positive Case'][0])
     else:
         # Negative check
         print("\n")
         print("Negative Test")
-        assert calc_mean != as_number(data['Mean|Positive Case'][0])
+        assert calc_variance_of_population_proportion != as_number(data['variance_of_population_proportion|Positive Case'][0])
+
+
+# UCID: pg79    Date: 02/20/2022
+def test_sample_standard_deviation(init_adv_calc):
+    data = read_adv_stats_file_data()
+    calc_sample_standard_deviation = init_adv_calc.stats_calc(data, '2')
+    numbers = list(map(float, data['ï»¿Input|Numbers']))
+    if calc_sample_standard_deviation == as_number(data['Median|Positive Case'][0]):
+        # Positive check
+        print("\n")
+        print("Positive Test")
+        assert calc_sample_standard_deviation == as_number(data['sample_standard_deviation|Positive Case'][0])
+    else:
+        # Negative check
+        print("\n")
+        print("Negative Test")
+        assert calc_sample_standard_deviation != as_number(data['sample_standard_deviation|Positive Case'][0])
+
+
+# UCID: pg79    Date: 02/20/2022
+def test_population_mean(init_adv_calc):
+    data = read_adv_stats_file_data()
+    calc_population_mean = init_adv_calc.stats_calc(data, '3')
+    numbers = list(map(float, data['ï»¿Input|Numbers']))
+    if calc_population_mean == as_number(data['Mode|Positive Case'][0]):
+        # Positive check
+        print("\n")
+        print("Positive Test")
+        assert calc_population_mean == as_number(data['population_mean|Positive Case'][0])
+    else:
+        # Negative check
+        print("\n")
+        print("Negative Test")
+        assert calc_population_mean != as_number(data['population_mean|Positive Case'][0])
 
 
 # UCID: pg79    Date: 02/20/2022
 def test_median(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_median = init_adv_calc.stats_calc(data, '2')
+    calc_median = init_adv_calc.stats_calc(data, '1')
     numbers = list(map(float, data['ï»¿Input|Numbers']))
     if calc_median == as_number(data['Median|Positive Case'][0]):
         # Positive check
@@ -228,53 +262,21 @@ def test_median(init_adv_calc):
 
 
 # UCID: pg79    Date: 02/20/2022
-def test_mode(init_adv_calc):
-    data = read_adv_stats_file_data()
-    calc_mode = init_adv_calc.stats_calc(data, '3')
-    numbers = list(map(float, data['ï»¿Input|Numbers']))
-    if calc_mode == as_number(data['Mode|Positive Case'][0]):
-        # Positive check
-        print("\n")
-        print("Positive Test")
-        assert calc_mode == as_number(data['Mode|Positive Case'][0])
-    else:
-        # Negative check
-        print("\n")
-        print("Negative Test")
-        assert calc_mode != as_number(data['Mode|Positive Case'][0])
-
-
-# UCID: pg79    Date: 02/20/2022
-def test_variance(init_adv_calc):
-    data = read_adv_stats_file_data()
-    calc_variance = round(init_adv_calc.stats_calc(data, '4'), 9)
-    print(calc_variance)
-    if calc_variance == as_number(data['Pop variance|Positive Case'][0]):
-        # Positive check
-        print("\n")
-        print("Positive Test")
-        assert calc_variance == as_number(data['Pop variance|Positive Case'][0])
-    else:
-        # Negative check
-        print("\n")
-        print("Negative Test")
-        assert calc_variance != as_number(data['Pop variance|Positive Case'][0])
-
-
-# UCID: pg79    Date: 02/20/2022
 # testing all values in one array since the data set is predefined and picking the data by columns instead of rows. The common stats_calc function
 # is used for all 5 calculations so the z score is also calculated at one go
-def test_correlation(init_adv_calc):
+def test_variance_of_sample_proportion(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_correlation = init_adv_calc.stats_calc(data, '5')
-    correlation_test_values = list(map(float, data['Positive Case|correlation']))
-    print(calc_correlation)
+    calc_variance_of_sample_proportion = init_adv_calc.stats_calc(data, '5')
+    variance_of_sample_proportion_test_values = list(map(float, data['Positive Case|correlation']))
+    print(calc_variance_of_sample_proportion)
     # print(z_score_test_values)
-    if calc_correlation == correlation_test_values:
-        print(calc_correlation)
+    if calc_variance_of_sample_proportion == variance_of_sample_proportion_test_values:
+        print(calc_variance_of_sample_proportion)
         print("Positive Test Case")
-        assert calc_correlation == correlation_test_values
+        assert calc_variance_of_sample_proportion == variance_of_sample_proportion_test_values
     else:
-        print(calc_correlation)
+        print(calc_variance_of_sample_proportion)
         print("Negative Test Case")
-        assert calc_correlation != correlation_test_values
+        assert calc_variance_of_sample_proportion != variance_of_sample_proportion_test_values
+
+
