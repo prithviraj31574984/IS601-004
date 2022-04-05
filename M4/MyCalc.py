@@ -1,6 +1,13 @@
 import csv
 import math
 import operator
+import math
+import statistics
+import scipy.stats as stat
+import pandas as pd
+from statistics import variance
+import numpy as np
+from statistics import stdev
 
 # https://stackoverflow.com/a/16503661 using a dict to store values grouped by column names
 import statistics
@@ -84,28 +91,31 @@ class AdvMyCalc(MyCalc):
  # UCID: pg79    Date: 02/20/2022
     # Stats calculation method that uses the statistics function and calculates the values for 5 adv functions - Mean, Median, Mode, Standard Deviation and Z-Score
     @staticmethod
-    def stats_calc(columns, stats_choice):
-        numbers = list(map(float, columns['ï»¿Input|Numbers']))
-        if stats_choice == '1':
-            mean = statistics.mean(numbers)
-            return mean
-        elif stats_choice == '2':
-            median = statistics.median(numbers)
-            return median
-        elif stats_choice == '3':
-            mode = statistics.mode(numbers)
-            return mode
-        elif stats_choice == '4':
-            std_deviation = statistics.pstdev(numbers)
-            return std_deviation
+    def stats_calc(stats_choice, data=None):
+        #numbers = list(map(float, columns['ï»¿Input|Numbers']))
+        if data is None:
+            n = list(map(int, input('Enter numbers: ').split()))
         else:
-            mean = statistics.mean(numbers)
-            std_deviation = statistics.pstdev(numbers)
-            z_score = []
-            for num in numbers:
-                zs = round((num - mean) / std_deviation, 9)
-                z_score.append(zs)
-            return z_score
+            n = [float(x) for x in data]
+        if stats_choice == '1':
+            # n=list(map(int, input('Enter numbers: ').split()))
+            print('The variance of Population proportion is {0}'.format(statistics.variance(n)))
+        elif stats_choice == '2':
+            # n=list(map(int, input('Enter numbers: ').split()))
+            print(stdev(n))
+        elif stats_choice == '3':
+            # n=(input('enter the numbers: '))
+            v=n.split(' ')
+            sum=0
+            for e in v:
+                sum=sum+int(e)
+            print("The Population Mean is {0}".format(sum/len(v)))
+        elif stats_choice == '4':
+            values = n.split(' ')
+            print(np.median(values))
+        else:
+            n=list(map(int, input('Enter numbers: ').split()))
+            print("Variance of sample Proportion set is {0}".format(statistics.variance(n)))
   # UCID: pg79    Date: 02/20/2022
     def squareroot(self, num):
         return math.sqrt(num)
@@ -128,8 +138,7 @@ if __name__ == '__main__':
                 elif option == '1':
                     iSTR = input("What is your eq:")
                     print("Your eq was " + str(iSTR))
-                    checks = ["+", "**", "//", "/", "*", "x", "-", "%", "^^",
-                              '***']  # added a new symbol for sq root - ^^
+                    checks = ["+", "**", "//", "/", "*", "x", "-", "%", "^^",'***']  # added a new symbol for sq root - ^^
                     handled = False                         # UCID: pg79    Date: 02/20/2022
                     for check in checks:
                         if not handled and check in iSTR:
@@ -144,17 +153,18 @@ if __name__ == '__main__':
                             print("Result is " + str(r))
                             handled = True
                 else:
-                    file = "adv_data_file.csv"  # used the file directly instead of input from console for running in pycharm directly.
+                    ##file = "adv_data_file.csv"  # used the file directly instead of input from console for running in pycharm directly.
                     # file = "../stats_numbers.csv"
                     iSTR = input(
-                        "Select number for operation: 1 - Mean , 2 - Median, 3- Mode, 4 - Population Standard Deviation, 5 - ZScore")
+                        "Select number for operation: 1 - variance of Population proportion , 2 -Sample Standard Deviation , 3- Population mean, 4 -median, 5 - Variance of sample Proportion")
                     if input == '1' or '2' or '3' or '4' or '5':
-                        file_columns = calc.read_stats_file(file)
-                        result = calc.stats_calc(file_columns, iSTR)
+                        #file_columns = calc.read_stats_file(file)
+                        #result = calc.stats_calc(file_columns, iSTR)
+                        result = calc.stats_calc(iSTR)
                     else:
                         print('You have selected an invalid option')
                         handled = False
-                    print(f"You have selected {iSTR} and your result is {result}")
+                    #print(f"You have selected {iSTR} and your result is {result}")
                 handled = True
             if not handled:
                 print("The action you tried is not supported, please try again")

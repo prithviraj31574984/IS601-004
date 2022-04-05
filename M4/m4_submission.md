@@ -1,130 +1,191 @@
-<table><tr><td> <em>Assignment: </em> M4-Simple-Calc</td></tr>
+<table><tr><td> <em>Assignment: </em> Mini Project 2_Advanced Calculator</td></tr>
 <tr><td> <em>Student: </em> Prithvi Raj Goravi Dattathreya(pg79)</td></tr>
-<tr><td> <em>Generated: </em> 2/21/2022 9:45:31 AM</td></tr>
-<tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-004-S22/m4-simple-calc/grade/pg79" target="_blank">Grading</a></td></tr></table>
-<table><tr><td> <em>Instructions: </em> <p>Make sure you&#39;re working in an up to date branch</p>
-<ul>
+<tr><td> <em>Generated: </em> 4/5/2022 7:12:16 PM</td></tr>
+<tr><td> <em>Grading Link: </em> <a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-004-S22/mini-project-2_advanced-calculator/grade/pg79" target="_blank">Grading</a></td></tr></table>
+<table><tr><td> <em>Instructions: </em> <p>Prepare your workspace</p>
+<ol>
 <li><code>git checkout dev</code></li>
 <li><code>git pull origin dev</code></li>
-<li><code>git checkout -b M4-Simple-Calc</code></li>
-</ul>
-<p>This will likely be started in class.</p>
-<p>Steps:</p>
+<li><code>git checkout -b MP2-AdvCalc</code></li>
+</ol>
+<p>In this project, you&#39;ll decorate or extend one of the given MyCalc samples (do not edit MyCalc directly).
+For every added calculation you&#39;ll need to provide a positive and negative test case.
+<strong>Note:</strong> negative test cases will throw and capture exceptions to generate a positive test case
+Negative test cases test for invalid input and/or invalid operations. These test cases will be via csv files as well 
+(just like the changes to addition, subtraction, multiplication, division, square, and square root)</p>
+<p>HINT 1: You can generate a normal distribution of random distribution of numbers with excel to use for your data:  Here (<a href="http://howtoexcel.org/statistics/normal-distribution/">http://howtoexcel.org/statistics/normal-distribution/</a>)</p>
+<p>HINT 2: You can create another excel file that contains the answers to your calculations that you can use in your unit tests.</p>
+<p><strong>Your program needs to additionally calculate the following:</strong></p>
 <ol>
-<li>Create a new Folder called M4</li>
-<li>Create a new file called MyCalc.py inside this folder</li>
-<li>Create a MyCalc Class</li>
-<li>Define basic addition / subtraction / multiplication / division functions<ol>
-<li>These functions should update an internal variable as a running total/value called <code>ans</code></li>
-<li>All functions must properly handle the math given standard math scenarios (i.e., show proper messages when trying to divide by zero)</li>
-<li>Since you&#39;ll likely be taking screenshots of the code, make sure you add a comment with your ucid and the date</li>
-</ol>
+<li>Square</li>
+<li>Square Root</li>
+<li>Pick 5 from below<ul>
+<li>Population Mean</li>
+<li>Median</li>
+<li>Mode</li>
+<li>Population Standard Deviation</li>
+<li>Variance of population proportion</li>
+<li>Z-Score</li>
+<li>Standardized score</li>
+<li>Population Correlation Coefficient</li>
+<li>Confidence Interval</li>
+<li>Population Variance</li>
+<li>P Value</li>
+<li>Proportion</li>
+<li>Sample Mean</li>
+<li>Sample Standard Deviation</li>
+<li>Variance of sample proportion</li>
+</ul>
 </li>
-<li>Define a &quot;main&quot; logic to run when the program runs</li>
-<li>This logic should ask for user input<ol>
-<li>The input can be any valid number, any valid math operator, and any valid number (i.e., 2 * 2)<ol>
-<li>This will do an immediate calculation, print it, and store the answer in the <code>ans</code> variable</li>
 </ol>
-</li>
-<li>Alternatively, the input can be <code>ans</code>, any valid math operator, any valid number (i.e., <code>ans</code> * 2)<ol>
-<li>This will use the previous answer (or 0 if not set) as part of the calculation, print it, and will store the new answer in the <code>ans</code> variable</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Create a test case for each scenario that utilize functions to have expected input and compare against expected output, all cases should pass<ol>
-<li>Test number-add-number</li>
-<li>Test ans-add-number</li>
-<li>Test number-sub-number</li>
-<li>Test ans-sum-number</li>
-<li>Test number-mult-number</li>
-<li>Test ans-mult-number</li>
-<li>Test number-div-number</li>
-<li>Test ans-div-number</li>
-</ol>
-</li>
-<li>Create a new file called m4_submission.md inside the M4 folder</li>
-<li>Fill out the below deliverables</li>
-<li>Generate the markdown and paste it into the m4_submission.md</li>
-<li><code>git add .</code></li>
-<li><code>git commit -m &quot;adding m4 hw&quot;</code></li>
-<li><code>git push origin M4-Simple-Calc</code></li>
-<li>Create a pull request M4-Simple-Calc to dev</li>
-<li>Create a pull request dev to prod (after the previous one is merged)</li>
-<li>Navigate to the prod branch on github, go to the M4 folder, click the m4_submission.md</li>
-<li>Submit this link to Canvas</li>
+<ul>
+<li>You&#39;ll update your previous test cases to read from csv files for the input and output values.</li>
+<li>Use the below csv files for your existing test cases of addition, subtraction, multiplication, and division.
+As well as testing the new square and square root modifications.</li>
+</ul>
+<p><strong>Note</strong>: You may need to view the data via the &quot;Raw&quot; button on the gist.
+<a href="https://gist.github.com/MattToegel/958ad17cc2c94337a5260126639eefbe">https://gist.github.com/MattToegel/958ad17cc2c94337a5260126639eefbe</a> </p>
+<p>Once done do the following:</p>
+<ol>
+<li>Git add all changes (including the test case csv files)</li>
+<li>Git commit with relevant messages</li>
+<li>Git push origin MP2-AdvCalc</li>
+<li>Create a Pull Request on Github to dev (keep it open)</li>
+<li>Fill out the details here</li>
+<li>Save and Generate the markdown (any changes require this step to be repeated)</li>
+<li>Paste the content into a <code>mp2_submission.md</code> file</li>
+<li>Git add/commit/push the submission file change</li>
+<li>Complete the pull request merge</li>
+<li>Create a new pull request from dev to prod and complete it</li>
+<li>Navigate to prod branch&#39;s <code>mp2_submission.md</code> file and paste the direct link to Canvas</li>
 </ol>
 </td></tr></table>
-<table><tr><td> <em>Deliverable 1: </em> Code Snippets (Make sure each screenshot has a comment showing your ucid and the date it was written) </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
-<tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of valid Addition Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154974743-f757d69c-164a-4f8d-92f1-10719f34615d.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>addition function<br></p>
+<table><tr><td> <em>Deliverable 1: </em> Added Functionality: Square </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of the new function (include your ucid and date)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161863023-f5d132a0-ad62-4398-a570-03261c487636.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Function to calculate square of the number <br></p>
+</td></tr>
+<tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161864812-f6b9dde9-14e7-4c2d-a9c9-2c97df3188d5.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of the output in the Terminal in which we are able to<br>run advanced statistics functions  <br></p>
 </td></tr>
 </table></td></tr>
-<tr><td> <em>Sub-Task 2: </em> Screenshot of valid Subtraction Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154974966-29ffb48a-c5bb-4a26-bcde-4adfeea931df.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>Subtraction Function<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 3: </em> Screenshot of valid Multiplication Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975039-c22c1890-5010-47b9-87ae-e99a4537cde8.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>Multiplication Function<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 4: </em> Screenshot of valid division Function</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975161-76bcfe65-9954-4ad0-accd-f7b1baba251a.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>Multiplication Function<br></p>
+<tr><td> <em>Sub-Task 2: </em> Screenshot of the passing test cases from the csv file</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161861368-98937c05-89cb-4cc8-89d4-ae03f3637f7f.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of passing test case and the test cases are read from the<br>CSV file <br></p>
 </td></tr>
 </table></td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 2: </em> Test Case Validations </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
-<tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of passing number-add-number Test Case (should test multiple values via fixture)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975895-91b9437a-b3d0-4c4a-b55b-98aeb9628468.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>addition test case<br></p>
+<table><tr><td> <em>Deliverable 2: </em> Added Functionality: Square Root </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Screenshot of the new function (include your ucid and date)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161863023-f5d132a0-ad62-4398-a570-03261c487636.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Function to calculate square root of the number <br></p>
 </td></tr>
 </table></td></tr>
-<tr><td> <em>Sub-Task 2: </em> Screenshot of passing ans-add-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154975895-91b9437a-b3d0-4c4a-b55b-98aeb9628468.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>answer + number test case<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 3: </em> Screenshot of passing number-sub-number Test Case (should test multiple values via fixture)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976387-f5277ac2-dd1b-4f5a-a6e0-baa6b8a18ac7.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>subtraction test case<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 4: </em> Screenshot of passing ans-sub-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976387-f5277ac2-dd1b-4f5a-a6e0-baa6b8a18ac7.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>answer -- number test case<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 5: </em> Screenshot of passing number-mult-number Test Case (should test multiple values via fixture)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976167-a046d983-9760-41e5-ad63-17b1471147d2.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>multiplication test case<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 6: </em> Screenshot of passing ans-multi-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976167-a046d983-9760-41e5-ad63-17b1471147d2.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>answer * number test case<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 7: </em> Screenshot of passing number-div-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976784-1a8a902a-c86a-4cb1-b6b5-71bb34df23f4.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>division test case<br></p>
-</td></tr>
-</table></td></tr>
-<tr><td> <em>Sub-Task 8: </em> Screenshot of passing ans-div-number Test Case (should test multiple values via fixture, ans should be a cached value from a previous case)</td></tr>
-<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/154976784-1a8a902a-c86a-4cb1-b6b5-71bb34df23f4.png"/></td></tr>
-<tr><td> <em>Caption:</em> <p>answer / number test case<br></p>
+<tr><td> <em>Sub-Task 2: </em> Screenshot of the passing test cases from the csv file</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161861439-a83139b8-7fb1-412c-acf4-ad6918a96ddf.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of passing test case and the test cases are read from the<br>CSV file <br></p>
 </td></tr>
 </table></td></tr>
 </table></td></tr>
-<table><tr><td> <em>Deliverable 3: </em> Misc </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
-<tr><td><table><tr><td> <em>Sub-Task 1: </em> Briefly talk about anything you learn during this assignment/module</td></tr>
-<tr><td> <em>Response:</em> <p>i mainly learned about the python test cases and how the test cases<br>can be automatically checked without any manual testing<br></p><br></td></tr>
-<tr><td> <em>Sub-Task 2: </em> Discuss how test cases work and anything new you learned about them while doing this assignment</td></tr>
-<tr><td> <em>Response:</em> <p>test cases check all the operations in a go<br></p><br></td></tr>
-<tr><td> <em>Sub-Task 3: </em> Add the pull request of M4-Simple-Calc to Dev link</td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/prithviraj31574984/IS601-004/pull/6">https://github.com/prithviraj31574984/IS601-004/pull/6</a> </td></tr>
+<table><tr><td> <em>Deliverable 3: </em> Choice 1 </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Label what your choice was and explain the usage/purpose from the math perspective</td></tr>
+<tr><td> <em>Response:</em> <p>variance of population proportion -  a population proportion   describes a<br>percentage value associated with a population.<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Screenshot of the new function (include your ucid and date)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161861984-1a4a706d-d4cd-466b-bcae-21892d609fdc.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of the Variance of population proportion function which will be calculated when<br>we press choice 1<br></p>
+</td></tr>
 </table></td></tr>
-<table><tr><td><em>Grading Link: </em><a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-004-S22/m4-simple-calc/grade/pg79" target="_blank">Grading</a></td></tr></table>
+<tr><td> <em>Sub-Task 3: </em> Screenshot of positive test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161864469-0c9210f1-7aee-4024-a302-a52012d8ebf4.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of positive pytest case execution <br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 4: </em> Screenshot of negative test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161864522-44ac5215-a445-4f33-815a-d674549d671a.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of negative pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+</table></td></tr>
+<table><tr><td> <em>Deliverable 4: </em> Choice 2 </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Label what your choice was and explain the usage/purpose from the math perspective</td></tr>
+<tr><td> <em>Response:</em> <p>sample standard deviation - The root-mean square of the differences between observations and<br>the sample mean is called sample standard deviation <br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Screenshot of the new function (include your ucid and date)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161861984-1a4a706d-d4cd-466b-bcae-21892d609fdc.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of the sample standard deviation function which will be calculated when we<br>press choice 2<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 3: </em> Screenshot of positive test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862266-c1cc86ed-9702-4f82-8701-c1608fa54dbe.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> Screenshot of positive pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 4: </em> Screenshot of negative test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862323-1a3cbb77-2aab-4aa2-983b-656618ab817c.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> Screenshot of Negative pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+</table></td></tr>
+<table><tr><td> <em>Deliverable 5: </em> Choice 3 </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Label what your choice was and explain the usage/purpose from the math perspective</td></tr>
+<tr><td> <em>Response:</em> <p>Population mean-The population mean is an average of a group characteristic<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Screenshot of the new function (include your ucid and date)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161861984-1a4a706d-d4cd-466b-bcae-21892d609fdc.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of the Population mean function which will be calculated when we press<br>choice 3<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 3: </em> Screenshot of positive test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862380-98fad131-edaf-436a-94b7-f48bf5d7d58f.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of  the passing positive pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 4: </em> Screenshot of negative test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862430-e3faf438-aa1e-436d-854f-83fa774fb6a0.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of  the passing Negative pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+</table></td></tr>
+<table><tr><td> <em>Deliverable 6: </em> Choice 4 </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Label what your choice was and explain the usage/purpose from the math perspective</td></tr>
+<tr><td> <em>Response:</em> <p>Median- In statistics and probability theory, the median is the value separating the<br>higher half from the lower half of a data sample, a population, or<br>a probability distribution.<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Screenshot of the new function (include your ucid and date)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161861984-1a4a706d-d4cd-466b-bcae-21892d609fdc.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>Screenshot of the Median function which will be calculated when we press choice<br>4<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 3: </em> Screenshot of positive test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862479-836929a2-d13a-475f-9d5f-36a646fba27f.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> Screenshot of passing positive pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 4: </em> Screenshot of positive test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862519-68a3de34-b589-4dbc-bc6a-fadc54673e44.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> Screenshot of negative pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+</table></td></tr>
+<table><tr><td> <em>Deliverable 7: </em> Choice 5 </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Label what your choice was and explain the usage/purpose from the math perspective</td></tr>
+<tr><td> <em>Response:</em> <p>Variance of sample proportion- In probability theory and statistics, variance of sample proportion<br>is the expectation of the squared deviation of a random variable from its<br>population mean or sample mean. Variance of sample proportion is a measure of<br>dispersion, meaning it is a measure of how far a set of numbers<br>is spread out from their average value. <br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Screenshot of the new function (include your ucid and date)</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161861984-1a4a706d-d4cd-466b-bcae-21892d609fdc.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p>screenshot of the Variance of sample proportion function which will be calculated when<br>we press choice 5<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 3: </em> Screenshot of positive test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862612-3afd3fe9-da6f-4cf0-a0bf-0c0d8d023e5c.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> Screenshot of passing positive pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+<tr><td> <em>Sub-Task 4: </em> Screenshot of positive test case execution</td></tr>
+<tr><td><table><tr><td><img width="768px" src="https://user-images.githubusercontent.com/97992883/161862612-3afd3fe9-da6f-4cf0-a0bf-0c0d8d023e5c.png"/></td></tr>
+<tr><td> <em>Caption:</em> <p> Screenshot of passing negative pytest case execution<br></p>
+</td></tr>
+</table></td></tr>
+</table></td></tr>
+<table><tr><td> <em>Deliverable 8: </em> Misc </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://via.placeholder.com/400x120/009955/fff?text=Complete"></td></tr>
+<tr><td><table><tr><td> <em>Sub-Task 1: </em> Mention any difficulties and how you overcame them or what you learned during this mini project.</td></tr>
+<tr><td> <em>Response:</em> <p>i did find difficulty in finding some of the statistics  function <br>and i did resolve by taking help from peers and professor<br></p><br></td></tr>
+<tr><td> <em>Sub-Task 2: </em> Pull Request Link(s) for this project</td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/prithviraj31574984/IS601-004/pull/13">https://github.com/prithviraj31574984/IS601-004/pull/13</a> </td></tr>
+</table></td></tr>
+<table><tr><td><em>Grading Link: </em><a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IS601-004-S22/mini-project-2_advanced-calculator/grade/pg79" target="_blank">Grading</a></td></tr></table>
