@@ -91,23 +91,27 @@ class AdvMyCalc(MyCalc):
  # UCID: pg79    Date: 02/20/2022
     # Stats calculation method that uses the statistics function and calculates the values for 5 adv functions - Mean, Median, Mode, Standard Deviation and Z-Score
     @staticmethod
-    def stats_calc(stats_choice):
+    def stats_calc(stats_choice, data=None):
         #numbers = list(map(float, columns['ï»¿Input|Numbers']))
+        if data is None:
+            n = list(map(int, input('Enter numbers: ').split()))
+        else:
+            n = [float(x) for x in data]
         if stats_choice == '1':
-            n=list(map(int, input('Enter numbers: ').split()))
+            # n=list(map(int, input('Enter numbers: ').split()))
             print('The variance of Population proportion is {0}'.format(statistics.variance(n)))
         elif stats_choice == '2':
-            n=list(map(int, input('Enter numbers: ').split()))
+            # n=list(map(int, input('Enter numbers: ').split()))
             print(stdev(n))
         elif stats_choice == '3':
-            n=(input('enter the numbers: '))
+            # n=(input('enter the numbers: '))
             v=n.split(' ')
             sum=0
             for e in v:
                 sum=sum+int(e)
             print("The Population Mean is {0}".format(sum/len(v)))
         elif stats_choice == '4':
-            values = list(map(int,input('enter the values with space for median').split(' ')))
+            values = n.split(' ')
             print(np.median(values))
         else:
             n=list(map(int, input('Enter numbers: ').split()))

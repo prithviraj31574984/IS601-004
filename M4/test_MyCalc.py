@@ -196,8 +196,10 @@ def test_num_square_root_num(init_adv_calc, row):
 # UCID: pg79    Date: 02/20/2022
 def test_variance_of_population_proportion(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_variance_of_population_proportion = init_adv_calc.stats_calc(data, '1')
-    numbers = list(map(float, data['ï»¿Input|Numbers']))
+    num = list(map(str, data['ï»¿Input|Numbers'])).remove("")
+    print(num)
+    numbers = num
+    calc_variance_of_population_proportion = init_adv_calc.stats_calc('1', numbers)
     if calc_variance_of_population_proportion == as_number(data['variance_of_population_proportion|Positive Case'][0]):
         # Positive check
         print("\n")
@@ -213,7 +215,7 @@ def test_variance_of_population_proportion(init_adv_calc):
 # UCID: pg79    Date: 02/20/2022
 def test_sample_standard_deviation(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_sample_standard_deviation = init_adv_calc.stats_calc(data, '2')
+    calc_sample_standard_deviation = init_adv_calc.stats_calc('2', data)
     numbers = list(map(float, data['ï»¿Input|Numbers']))
     if calc_sample_standard_deviation == as_number(data['Median|Positive Case'][0]):
         # Positive check
@@ -230,7 +232,7 @@ def test_sample_standard_deviation(init_adv_calc):
 # UCID: pg79    Date: 02/20/2022
 def test_population_mean(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_population_mean = init_adv_calc.stats_calc(data, '3')
+    calc_population_mean = init_adv_calc.stats_calc('3', data)
     numbers = list(map(float, data['ï»¿Input|Numbers']))
     if calc_population_mean == as_number(data['Mode|Positive Case'][0]):
         # Positive check
@@ -247,7 +249,7 @@ def test_population_mean(init_adv_calc):
 # UCID: pg79    Date: 02/20/2022
 def test_median(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_median = init_adv_calc.stats_calc(data, '1')
+    calc_median = init_adv_calc.stats_calc('1', data)
     numbers = list(map(float, data['ï»¿Input|Numbers']))
     if calc_median == as_number(data['Median|Positive Case'][0]):
         # Positive check
@@ -266,7 +268,7 @@ def test_median(init_adv_calc):
 # is used for all 5 calculations so the z score is also calculated at one go
 def test_variance_of_sample_proportion(init_adv_calc):
     data = read_adv_stats_file_data()
-    calc_variance_of_sample_proportion = init_adv_calc.stats_calc(data, '5')
+    calc_variance_of_sample_proportion = init_adv_calc.stats_calc('5' ,data)
     variance_of_sample_proportion_test_values = list(map(float, data['Positive Case|correlation']))
     print(calc_variance_of_sample_proportion)
     # print(z_score_test_values)
