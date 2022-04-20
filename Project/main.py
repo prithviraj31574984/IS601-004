@@ -106,3 +106,4 @@ if __name__ == "__main__":
     # debugging output to verify tables were created
     for table in metadata.sorted_tables:
         print(table)
+
