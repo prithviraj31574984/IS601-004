@@ -2,11 +2,6 @@ name: cloudrun-deploy
 on:
   push:
     branches:
-      - Flask-Sample # rename this to your prod branch if the naming differs
-      - flask-login-reg
-      - flask-login-video
-      - flask-calc-history
-      - flask-auth-profile
       - milestone1
 jobs:
 
