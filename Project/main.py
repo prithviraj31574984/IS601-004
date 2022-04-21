@@ -35,7 +35,7 @@ def create_app(config_filename=''):
     # set SECRET_KEY the same way you do DB_URL, just a different value
     SECRET_KEY = os.environ.get("SECRET_KEY", "thisisforlocal") # os.urandom(32 )
     app.config["SECRET_KEY"] = SECRET_KEY
-
+    print(app.config["SECRET_KEY"])
     # app.config.from_pyfile(config_filename)
     register_blueprints(app)
     register_extensions(app)
