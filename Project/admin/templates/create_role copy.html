@@ -1,9 +1,8 @@
 {% extends "layout.html" %}
-{% block title %}Roles{% endblock %}
-{% block content %}
 
-<div class="admin-create">
-    <div class="container">
+{% block content %}
+<div class="main-profile">
+    <div class="admin-profile">
 
 
         <div class="row justify-content-center text-center">
@@ -14,7 +13,7 @@
                     <div class="form-group ">
 
                         <div class="col-lg-12 admin-profile-col">
-                            <h1 class="">Create Users</h1>
+                            <h1 class="text-center">Create Users</h1>
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 {{ form.name(class="form-control") }}
@@ -39,38 +38,8 @@
             </div>
 
         </div>
+
+
     </div>
 </div>
-{% if roles|length == 0 %}
-<li class="list-group-item">No Roles</li>
-{% else %}
-
-<div class="container">
-    <h1 class="text-center">Roles</h1>
-    <table class="table  table-dark table-bordered">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>No. Of Users</th>
-
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for role in roles %}
-            <form action="/admin/role/delete" method="POST">
-                <tr>
-                    <td>{{role.name}} </td>
-                    <td>{{role.users|length}}</td>
-
-                </tr>
-            </form>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-{% endif %}
-
-
 {% endblock %}
