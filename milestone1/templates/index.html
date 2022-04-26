@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div>
+    {% if current_user.is_anonymous %}
+    <div class="content">
+        <div class="hero">
+            <h1 class="text-center">Login to explore features!!!
+                <span class="hero1"><a class="btn active mt-3" href="{{ url_for('auth.login') }}">Explore Now</a> </span>
+            </h1>
+        </div>
+    </div>
+    {% else %}
+    
+    <div class="content">
+        <div class="hero">
+            <h1 class="text-center">
+                <p>Welcome {{current_user.username}}</p>
+            </h1>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
