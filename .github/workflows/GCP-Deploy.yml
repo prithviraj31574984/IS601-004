@@ -2,7 +2,7 @@ name: cloudrun-deploy
 on:
   push:
     branches:
-      - milestone1
+      - finalproject
 jobs:
 
     deploy:
@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         defaults:
           run:
-            working-directory: milestone1 # change this to the directory your web app is in
+            working-directory: finalproject # change this to the directory your web app is in
         env:
           IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_APP_NAME }}
         steps:

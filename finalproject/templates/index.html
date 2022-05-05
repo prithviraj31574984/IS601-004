@@ -1,0 +1,314 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+         <section class="slider_section ">
+            <div class="slider_bg_box">
+               <img src={{url_for("static",filename="images/slider-bg.jpg")}} alt="">
+            </div>
+            <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container ">
+                        <div class="row">
+                           <div class="col-md-7 col-lg-6 ">
+                              <div class="detail-box">
+                                 <h1>
+                                    <span>
+                                    Sale 20% Off
+                                    </span>
+                                    <br>
+                                    On Everything
+                                 </h1>
+                                 <p>
+                                   Go to shop and grab the oppertunity.
+                                 </p>
+                                 <div class="btn-box">
+                                    <a href="/products" class="btn1">
+                                    Shop Now
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item ">
+                     <div class="container ">
+                        <div class="row">
+                           <div class="col-md-7 col-lg-6 ">
+                              <div class="detail-box">
+                                 <h1>
+                                    <span>
+                                    Sale 20% Off
+                                    </span>
+                                    <br>
+                                    On Everything
+                                 </h1>
+                                 <p>
+                                    Go to shop and grab the oppertunity.
+                                 </p>
+                                 <div class="btn-box">
+                                    <a href="/products" class="btn1">
+                                    Shop Now
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="container ">
+                        <div class="row">
+                           <div class="col-md-7 col-lg-6 ">
+                              <div class="detail-box">
+                                 <h1>
+                                    <span>
+                                    Sale 20% Off
+                                    </span>
+                                    <br>
+                                    On Everything
+                                 </h1>
+                                 <p>
+                                    Go to shop and grab the oppertunity.
+                                 </p>
+                                 <div class="btn-box">
+                                    <a href="/products" class="btn1">
+                                    Shop Now
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="container">
+                  <ol class="carousel-indicators">
+                     <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                     <li data-target="#customCarousel1" data-slide-to="1"></li>
+                     <li data-target="#customCarousel1" data-slide-to="2"></li>
+                  </ol>
+               </div>
+            </div>
+         </section>
+         <!-- end slider section -->
+      </div>
+
+
+      
+      <!-- product section -->
+      <section class="product_section layout_padding">
+         <div class="container">
+            <div class="heading_container heading_center">
+               <h2>
+                  Our <span>products</span>
+               </h2>
+            </div>
+
+
+
+
+
+
+            <div class="row">
+               <div class="col-sm-6 col-md-4 col-lg-2">Filters: </div>
+              
+              <div class="col-sm-6 col-md-4 col-lg-3">
+              <span>by Category</span>
+              <select style="height: 35px;" class="form-select border border-danger" aria-label="Default select example" name="category" onchange="javascript:handleSelect(this)">
+                 <option selected>Select Category</option>
+                 <option value="1">Dresses</option>
+                 <option value="2">Caps</option>
+                 <option value="3">Computers</option>
+               </select> 
+               
+               <script type="text/javascript">
+                 function handleSelect(elm)
+                 {
+                    window.location = "/pro_cat/"+elm.value;
+                 }
+               </script>
+               </div>
+       
+               <div class="col-sm-6 col-md-4 col-lg-3">
+                  <form id="s_button" method="post" action="/search">
+                  <input type="text" style="height:35px;" name="search" id="search1" placeholder="search by value">
+                  </div>
+      
+      
+            
+                  <div class="col-sm-6 col-md-4 col-lg-1">
+                   <input type="submit" class="btn btn-danger" value="search">
+                   </form>
+                  </div> 
+      
+     
+                  <div class="col-sm-6 col-md-4 col-lg-3">     
+                 <button class="btn btn-danger">Sort By Price</button>
+                 </div>
+                 </div>
+  
+        
+  
+               
+              </div>
+
+
+
+
+
+
+
+            <div class="row">
+
+           {%for products in product.items%}
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box">
+                     <div class="option_container">
+                        <div class="options">
+                          {%if products.stock == 0 %}
+                           <a class="option1">Out of Stock</a>
+
+                           <a href="/details/{{products.id}}" class="option2">
+                              <button class="btn-dark" style="border:0">Details</button>
+                              </a>
+                              
+                              {%if current_user.role == "admin" %}
+                              <a href="/update/{{products.id}}" class="option1">
+                                 <button class="btn-danger" style="border:0">Update</button>
+                                 </a>
+                              {%endif%}
+                           {%else%}
+                           <a class="option1" id="add_cart{{products.id}}">
+
+                              <form id="cart_form">
+                                 <input type="hidden" id="item_id{{products.id}}" value="{{products.id}}">
+                           
+                           <button type="submit" class="btn-danger" style="border:0">add to cart</button>
+                           </form>
+                           </a>
+                           <a href="/details/{{products.id}}" class="option2">
+                           <button class="btn-dark" style="border:0">Details</button>
+                           </a>
+                           
+                           {%if current_user.role == "admin" %}
+                           <a href="/update/{{products.id}}" class="option1">
+                              <button class="btn-danger" style="border:0">Update</button>
+                              </a>
+                           {%endif%}
+                           {%endif%}
+                        </div>
+
+
+
+                     </div>
+                     <div class="img-box">
+                        <img src={{url_for("static",filename="images/")}}{{products.image}} alt="">
+                     </div>
+                     <div class="detail-box">
+                        <h5>
+                           {{products.name}}
+                        </h5>
+                        <h6>
+                           ${{products.unit_price}}
+                        </h6>
+                     </div>
+
+
+                  </div>
+               </div>
+
+
+
+               
+      <script type="text/javascript">
+         $(document).on('submit','#add_cart{{products.id}}',function(e)
+                        {
+           e.preventDefault();
+           $.ajax({
+             type:'POST',
+             url:'/cart',
+             data:{
+               product_id:$("#item_id{{products.id}}").val()
+             },
+             success:function(data)
+             {
+               
+     
+             
+                 if (data['value'] != ""){
+                     $("#lblCartCount").html(data['value'])
+                 }
+     
+     
+     
+             
+     
+             // $(this).closest('form').find("input[type=password]").val("");
+             $("input[name=password]").val('');
+             $("input[name=r_password]").val('');
+             //   alert(data['data']);
+            
+           
+             }
+           })
+         });    
+       </script>
+
+{%endfor%}
+               
+            </div>
+
+            <br><br>
+            <!-- Pagination Links-->
+            <div class="text-right">
+               <a href="{{ url_for('home', page=product.prev_num) }}"
+                  class="btn btn-outline-danger 
+                  {% if product.page == 1 %}disabled{% endif %}">
+                   &laquo;
+               </a>
+            
+            {% for page_num in product.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+            
+                       {% if product.page == page_num %}
+                       <a href="{{ url_for('home', page=page_num) }}"
+                          class="btn btn-danger">
+                           {{ page_num }}
+                       </a>
+                       {% else %}
+                       <a href="{{ url_for('home', page=page_num) }}"
+                          class="btn btn-outline-danger">
+                           {{ page_num }}
+                       </a>
+                       {% endif %}
+                   {% else %}
+                       ...
+                   {% endif %}
+               {% endfor %}
+               <a href="{{ url_for('home', page=product.next_num) }}"
+                  class="btn btn-outline-danger 
+                  {% if product.page == product.pages %}disabled{% endif %}">
+                   &raquo;
+               </a>
+            
+            
+            <p class="text-right mt-3">
+              Showing page {{ product.page }} of {{ product.pages }}
+            </p>
+            
+            </div>
+            
+            
+         </div>
+
+       
+      </section>
+      <!-- end product section -->
+
+    
+     
+{%endblock%}
+    
