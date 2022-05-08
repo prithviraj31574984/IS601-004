@@ -2,7 +2,7 @@ name: cloudrun-deploy
 on:
   push:
     branches:
-      -mp3-flaskadvCalc
+      -mp3-flaskadvcalc
       -milestone1
 jobs:
 
