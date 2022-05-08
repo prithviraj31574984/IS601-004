@@ -8,6 +8,7 @@ on:
       - flask-calc-ab
       - flask-login-reg
       - flask-login-video
+      - mp3-flaskadvcalc
 jobs:
 
     deploy:
