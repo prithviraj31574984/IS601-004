@@ -201,7 +201,7 @@ def checkout():
     total_price = 0
     for key in product:
         total_price += product[key]['price']
-
+#ucid-pg79
     if request.method =="POST":
         total_price = 0
         if 'SHOP' in session:
