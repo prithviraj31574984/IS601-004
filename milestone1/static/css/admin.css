@@ -1,0 +1,69 @@
+.admin-submit{
+    margin-left:50px;
+    
+    /* background-color:red; */
+}
+.admin-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 123, 255, 0.7);
+    padding: 50px;
+    position: relative;
+    top:50px;
+
+}
+.admin-profile-col {
+    
+    position: relative;
+    bottom: 50px;
+
+}
+.list-roles{
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+.admin-class{
+    margin: 10px 0;
+}
+.admin-tables{
+    display: flex;
+    /* flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; */
+}
+.column{
+    position: relative;
+    left: 40%;
+}
+.column1 {
+    position: relative;
+    left: 130px;
+    
+
+}
+.admin-button{
+    margin-left: 20px;
+    font-weight: bold;
+    border:1px black solid;
+
+}
+.table td {
+    text-align: center;
+
+}
+
+
+.table th {
+    text-align: center;
+}
+.admin-create{
+    position: relative;
+    left:350px;
+}
+.input-group span{
+display: flex;
+align-items: center;
+justify-content: center;
+}
