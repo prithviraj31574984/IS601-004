@@ -390,7 +390,7 @@ def add_post():
 
         print(filename.split('.')[1])
         if str(filename.split('.')[1]) not in Allowed:
-            flash("Our website does not support that type of extension, Please update your Product Image")
+            flash("Product Updated Succesfully ")
         file.save(os.path.join(Upload_dir, filename))
         print(file)
         db.session.add(data)
@@ -426,7 +426,7 @@ def update(id):
             filename = secure_filename(file.filename)
             print(filename.split('.')[1])
             if str(filename.split('.')[1]) not in Allowed:
-                flash("Our website does not support that type of extension, Please update your Product Image")
+                flash("Product updates Succesfully !")
             file.save(os.path.join(Upload_dir, filename))
 
         if visibility.lower() == 'true':
